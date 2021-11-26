@@ -1,0 +1,32 @@
+name: "Testing"
+on: [push]
+jobs:
+  integ:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-20.04
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v2
+      - name: Approved
+        id: positiveTest
+        uses: ./
+        with:
+          fileURI: ".github/workflows/example-inputs/file.yml"
+          commandUser: "@NickLiffen"
+      - name: See Results 
+        run: |
+          echo ${{ steps.positiveTest.outputs.approved }}
+      - name: Not Approved
+        id: negativeTest
+        uses: ./
+        with:
+          fileURI: ".github/workflows/example-inputs/file.yml"
+          commandUser: "@BobTheBuilder"
+      - name: See Results 
+        run: |
+          echo ${{ steps.negativeTest.outputs.approved }}

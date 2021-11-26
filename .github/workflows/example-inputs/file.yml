@@ -1,0 +1,10 @@
+- salesforceName: "AMER-Canada"
+  label: "region-canada"
+  approvers:
+    - "@NickLiffen"
+    - "@NickLiffen"
+- salesforceName: "AMER-Enterprise-Central"
+  label: "region-central"
+  approvers:
+    - "@NickLiffen"
+    - "@NickLiffen"

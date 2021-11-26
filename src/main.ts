@@ -10,7 +10,7 @@ const run = async (): Promise<void> => {
     json: true,
   }) as file;
 
-  const approved = doc.find((region) => region.approvers.includes(user));
+  const approved = doc.find((region) => region.approvers.includes(`@${user}`));
 
   if (approved) {
     core.setOutput("approved", "true");

@@ -5697,7 +5697,7 @@ const run = async () => {
     const doc = (0, js_yaml_1.load)((0, fs_1.readFileSync)(file, "utf8"), {
         json: true,
     });
-    const approved = doc.find((region) => region.approvers.includes(user));
+    const approved = doc.find((region) => region.approvers.includes(`@${user}`));
     if (approved) {
         core.setOutput("approved", "true");
     }

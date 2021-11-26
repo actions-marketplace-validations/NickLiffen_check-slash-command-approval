@@ -1,20 +1,19 @@
-name: 'Slash Command Approveal Checker'
-author: 'NickLiffen'
-description: 'Slash Command Approval Check GitHub Action'
+name: "Slash Command Approveal Checker"
+author: "NickLiffen"
+description: "Slash Command Approval Check GitHub Action"
 inputs:
-  inputName:
-    fileURI:
-      description: 'The relative URI path to the yml file storing people who can approve a PoC'
-      required: true
-    commandUser:
-      description: 'The GitHub Username who executed the command'
-      required: true
+  fileURI:
+    description: "The relative URI path to the yml file storing people who can approve a PoC"
+    required: true
+  commandUser:
+    description: "The GitHub Username who executed the command"
+    required: true
 outputs:
   approved:
-    description: 'true means yes, false means no'
+    description: "true means yes, false means no"
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: "node12"
+  main: "dist/index.js"
 branding:
-  icon: 'target'  
-  color: 'blue'
+  icon: "target"
+  color: "blue"

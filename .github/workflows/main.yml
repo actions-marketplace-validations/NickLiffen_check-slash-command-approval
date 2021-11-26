@@ -17,7 +17,7 @@ jobs:
         uses: ./
         with:
           fileURI: ".github/workflows/example-inputs/file.yml"
-          commandUser: "@NickLiffen"
+          commandUser: "NickLiffen"
       - name: See Results 
         run: |
           echo ${{ steps.positiveTest.outputs.approved }}

@@ -33,7 +33,7 @@ jobs:
         run: |
           echo ${{ steps.negativeTest.outputs.approved }}
       - name: Running a Non Approved Action (Response)
-        id: negativeTest
+        id: negativeTestResponse
         uses: ./
         with:
           fileURI: ".github/workflows/example-inputs/file.yml"
@@ -41,4 +41,4 @@ jobs:
           response: "false"
       - name: See Results from the Non-Approved Actions (Response)
         run: |
-          echo ${{ steps.negativeTest.outputs.approved }}
+          echo ${{ steps.negativeTestResponse.outputs.approved }}

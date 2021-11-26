@@ -12,21 +12,33 @@ jobs:
     steps:
       - name: Git Checkout
         uses: actions/checkout@v2
-      - name: Approved
+      - name: Running an Approved Action (User)
         id: positiveTest
         uses: ./
         with:
           fileURI: ".github/workflows/example-inputs/file.yml"
           commandUser: "NickLiffen"
-      - name: See Results 
+          response: "true"
+      - name: See Results from the Approved Actions (User)
         run: |
           echo ${{ steps.positiveTest.outputs.approved }}
-      - name: Not Approved
+      - name: Running a Non Approved Action (User)
         id: negativeTest
         uses: ./
         with:
           fileURI: ".github/workflows/example-inputs/file.yml"
           commandUser: "@BobTheBuilder"
-      - name: See Results 
+          response: "true"
+      - name: See Results from the Non-Approved Actions (User)
+        run: |
+          echo ${{ steps.negativeTest.outputs.approved }}
+      - name: Running a Non Approved Action (Response)
+        id: negativeTest
+        uses: ./
+        with:
+          fileURI: ".github/workflows/example-inputs/file.yml"
+          commandUser: "@NickLiffen"
+          response: "false"
+      - name: See Results from the Non-Approved Actions (Response)
         run: |
           echo ${{ steps.negativeTest.outputs.approved }}

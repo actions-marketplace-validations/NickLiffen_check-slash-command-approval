@@ -8,6 +8,9 @@ inputs:
   commandUser:
     description: "The GitHub Username who executed the command"
     required: true
+  response:
+    description: "The information which the user sent us"
+    required: true
 outputs:
   approved:
     description: "true means yes, false means no"

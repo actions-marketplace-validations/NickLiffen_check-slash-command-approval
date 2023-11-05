@@ -15,7 +15,7 @@ outputs:
   approved:
     description: "true means yes, false means no"
 runs:
-  using: "node12"
+  using: "node20"
   main: "dist/index.js"
 branding:
   icon: "target"

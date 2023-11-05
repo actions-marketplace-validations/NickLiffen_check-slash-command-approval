@@ -8,13 +8,13 @@ const run = async (): Promise<void> => {
   const file = core.getInput("fileURI", { required: true });
 
   console.log(
-    `This action received the following as the user who approved the slash command: ${user}`
+    `This action received the following as the user who approved the slash command: ${user}`,
   );
   console.log(
-    `This action received the following as the response (true/false) to the slash command: ${response}`
+    `This action received the following as the response (true/false) to the slash command: ${response}`,
   );
   console.log(
-    `This action received the following as the path where the approved users can befound: ${file}`
+    `This action received the following as the path where the approved users can befound: ${file}`,
   );
 
   if (response === false) {

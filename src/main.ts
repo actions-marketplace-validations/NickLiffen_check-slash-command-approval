@@ -1,3 +1,5 @@
+// @ts-check
+
 import * as core from "@actions/core";
 import { readFileSync } from "fs";
 import { load } from "js-yaml";
@@ -14,7 +16,7 @@ const run = async (): Promise<void> => {
     `This action received the following as the response (true/false) to the slash command: ${response}`,
   );
   console.log(
-    `This action received the following as the path where the approved users can befound: ${file}`,
+    `This action received the following as the path where the approved users can be found: ${file}`,
   );
 
   if (response === false) {
